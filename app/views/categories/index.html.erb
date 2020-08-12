@@ -1,0 +1,27 @@
+<%= link_to "Back", recipes_path %>
+
+<% if current_user.admin %>
+    <%= link_to "New category", new_category_path %>
+<% end %>
+
+<% @categories.each.with_index(1) do |category, index| %>
+    <% if current_user.admin %>
+        <ul>
+            <%= index %>- <strong><%= category.name %></strong> <br>
+            <%= link_to "Edit", edit_category_path(category) %> <%= link_to "Delete", category_path(category), method: :delete, class: "destroy", data: {confirm: "Are you sure?"} %>
+        </ul>              
+    <% end %>
+<% end %> <br> <br>
+
+<% @categories_recipes.each do |category, recipes| %>
+    <h2 style="color: red;"><%= category.name if category %></h2> 
+    <strong>Total: <%= pluralize(category.recipes.count, "Recipe") %></strong> 
+    <ul>
+        <% recipes.each do |recipe| %>
+            <p>
+                <li><%= link_to recipe.name, category_recipe_path(recipe.category_id, recipe) %> </li>
+                <strong>by: <%= recipe.user.name || recipe.user.username %></strong>
+            </p>
+        <% end %>
+    </ul>
+<% end %>
