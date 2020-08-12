@@ -1,0 +1,30 @@
+<%= form_tag recipes_path, method: :get do %>
+<p>
+    <%= text_field_tag :find_recipes_by_name, params[:find_recipes_by_name], placeholder: "Search by Names" %>
+    <%= submit_tag "Search", name: nil %>
+</p>
+<% end %> 
+
+<h4>Or</h4>
+
+<%= form_tag recipes_path, method: :get do %>
+<p>
+    <%= text_field_tag :find_recipes_by_serving, params[:find_recipes_by_serving], placeholder: "Search by Servings" %>
+    <%= submit_tag "Search", name: nil %>
+</p>
+<% end %>
+
+
+<div class="row">
+    <% @recipes.each do |recipe| %>
+        <div class="column">
+            <%= link_to recipe.name, recipe_path(recipe) %> 
+            <% if recipe.image.attached? %>
+                <image src="<%=(url_for(recipe.image)) %>" style="width:100%;">
+            <% end %> 
+            <strong>by: <%= mail_to recipe.user.email %></strong> <br>
+            <strong><%= link_to pluralize(recipe.comments.count, "Review"), recipe_comments_path(recipe) %></strong>
+        </div>
+    <% end %>
+</div>
+
