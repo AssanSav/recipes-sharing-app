@@ -1,0 +1,12 @@
+<h1>Reviews</h1>
+
+<% @comments.each do |user, comments| %>
+    <strong><%= user.username || user.name %> </strong> <br>
+    
+    <% comments.each do |comment| %>
+        <ul>
+            <li><%= comment.content %></li>
+        </ul>    
+    <% end %>
+    
+<% end %>
