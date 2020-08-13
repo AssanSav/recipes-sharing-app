@@ -6,8 +6,8 @@ class User < ApplicationRecord
     has_many :recipes
     has_many :comments
 
-    validates :username, presence: true, uniqueness: true, length: {minimum: 5}, on: :create
-    validates :first_name, :last_name, presence: true, length: { maximum: 30 }
+    # validates :username, presence: true, uniqueness: true, length: {minimum: 5}, on: :create
+    # validates :first_name, :last_name, presence: true, length: { maximum: 30 }
 
     def self.from_omniauth(auth) 
         user = where(provider: auth.provider, uid: auth.uid).first 
