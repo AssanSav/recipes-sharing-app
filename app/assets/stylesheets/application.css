@@ -13,3 +13,190 @@
  *= require_tree .
  *= require_self
  */
+
+ 
+
+
+ /*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ */
+
+
+body {
+  background-color: burlywood;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+ .field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+    color: red;
+}
+
+.nav_bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav_bar li {
+  float: left;
+}
+
+.nav_bar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav_bar li a:hover {
+  background-color: black;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+.nav_bar a {
+    -moz-user-select: none;
+    background: #2A49A5;
+    border: 1px solid #082783;
+    box-shadow: 0 1px #4C6BC7 inset;
+    color: white;
+    padding: 3px 5px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 #082783;
+    font: 12px Verdana, sans-serif;
+}
+
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0.2em;
+  padding: 0 15px 0 46px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #FFF;
+}
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.loginBtn:focus {
+  outline: none;
+}
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+.loginBtn--facebook {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.field input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border-radius: initial;
+  background: #f1f1f1;
+}
+
+.field input:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.field textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border-radius: initial;
+  background: #f1f1f1;
+}
+
+.field textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+input[type="checkbox"] {
+    height: 0.95em;
+    width: 0.95em;
+}
+label, input {
+    vertical-align: top;
+    font-weight: bolder;
+}
+
+
+
