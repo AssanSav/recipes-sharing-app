@@ -31,11 +31,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'omniauth' 
 gem 'omniauth-facebook'
 gem 'devise'
-gem 'dotenv-rails'
-gem 'rspec-rails'
-gem 'pry-rails'
+
 
 group :development, :test do
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'pry-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

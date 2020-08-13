@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RecipesSharingApp</title>
+    <title>RecipesSharing20</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,22 +9,22 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <nav class="nav_bar">
-      <ul>
-        <% if current_user %>
-        <li><%= link_to "Edit Profile", edit_user_registration_path(current_user) %></li>
-        <li style="float: right;"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to "Recipes", recipes_path %></li>
-        <li><%= link_to "See by Category", categories_path %></li>
-        <li><%= link_to "New Recipe", new_recipe_path %></li>
-        <% else %>
-        <li><%= link_to "Log in", new_session_path(resource_name) %></li>
-        <li><%= link_to "Sign up", new_registration_path(resource_name) %></li>
-        <% end %>
-      </ul>
-    </nav>
-    <%= render 'layouts/alerts' %>
-    <%= yield %>
-  </body>
+    <body>
+        <nav class="nav_bar">
+            <ul>
+                <% if current_user %>
+                    <li><%= link_to "Edit Profile", edit_user_registration_path(current_user) %></li>
+                    <li style="float: right;"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to "Recipes", recipes_path %></li> 
+                    <li><%= link_to "See by Category", categories_path %></li>
+                    <li><%= link_to "New Recipe", new_recipe_path %></li>
+                <% else %>
+                    <li><%= link_to "Log in", new_session_path(resource_name) %></li>
+                    <li><%= link_to "Sign up", new_registration_path(resource_name) %></li>
+                <% end %>
+            </ul>
+        </nav>
+            <%= render 'layouts/alerts' %>
+            <%= yield %>
+    </body>
 </html>

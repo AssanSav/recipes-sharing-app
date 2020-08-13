@@ -12,4 +12,5 @@ class RecipeIngredient < ApplicationRecord
           end
       end
   end
+  
 end
